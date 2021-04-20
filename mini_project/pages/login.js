@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import { useState } from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/login.module.css";
 import axios from "axios";
 import config from "../config/config";
 
@@ -29,40 +29,26 @@ export default function Login({ token }) {
 
     const loginForm = () => (
         <div className={styles.gridContainer}>
-            <div><b>Username:</b></div>
+            <div><b>Username</b></div>
             <div>
                 <input
                     type="text"
                     name="username"
-                    placeholder="username"
+                    placeholder="Username"
                     onChange={(e) => setUsername(e.target.value)}
                 />
             </div>
-            <div><b>Password:</b></div>
+            <div><b>Password</b></div>
             <div>
                 <input
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
-            <div className="flex items-center">
-                <input
-                    id="remember_me"
-                    name="remember_me"
-                    type="checkbox"
-                    onClick={reMem}
-                />
-
-            </div>
-            <div className={styles.text}><label><ins><i><b>Remember Me</b></i></ins></label></div>
         </div>
     );
-
-    const copyText = () => {
-        navigator.clipboard.writeText(token);
-    };
 
     return (
         <Layout>
@@ -70,11 +56,15 @@ export default function Login({ token }) {
                 <title>Login Page</title>
             </Head>
             <div className={styles.container}>
-
-                <h1>Login</h1>
-                {loginForm()}
-                <div>
-                    <button className={styles.btn2} onClick={login}>Login</button>
+                <div className={styles.loginpage}>
+                    <h1 className={styles.logintext}>Login</h1>
+                    {loginForm()}
+                    <div className={styles.btn_login}>
+                        <button className={styles.login} onClick={login}>Login</button>
+                    </div>
+                    <div className={styles.btn_register}>
+                        <button className={styles.register} onClick={login}>Register</button>
+                    </div>
                 </div>
             </div>
         </Layout>
