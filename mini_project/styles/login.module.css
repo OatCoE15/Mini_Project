@@ -29,31 +29,30 @@
   font-size: 1.2rem;
 }
 .gridContainer>div>input {
-  grid-template-columns: 100px auto;
   width: 100%;
   padding: 2px 8px;
   margin: 0px 0;
   box-sizing: border-box;
   font-size: 14pt;
 }
-.btn_login{
+.login{
   text-align: center;
   margin-top: 10px;
 }
-.btn_register{
+.register{
   text-align: center;
   margin-top: 15px;
 }
-.login{
-  font-size: 22px;
+.btn_login{
+  font-size: 20px;
   border-radius: 6px;
   background-color :#1877f2;
   color: white;
   border: white;
   padding: 10px;
 }
-.register{
-  font-size: 19px;
+.btn_register{
+  font-size: 20px;
   border-radius: 6px;
   color: white;
   border: white;

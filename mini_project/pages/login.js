@@ -59,11 +59,11 @@ export default function Login({ token }) {
                 <div className={styles.loginpage}>
                     <h1 className={styles.logintext}>Login</h1>
                     {loginForm()}
-                    <div className={styles.btn_login}>
-                        <button className={styles.login} onClick={login}>Login</button>
+                    <div className={styles.login}>
+                        <button className={styles.btn_login} onClick={login}>Login</button>
                     </div>
-                    <div className={styles.btn_register}>
-                        <button className={styles.register} onClick={login}>Register</button>
+                    <div className={styles.register}>
+                        <button className={styles.btn_register} onClick={login}>Register</button>
                     </div>
                 </div>
             </div>
