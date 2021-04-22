@@ -4,7 +4,6 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 82, 51);
 }
 .loginpage{
   border: 3px solid black;
@@ -39,7 +38,7 @@
   text-align: center;
   margin-top: 10px;
 }
-.register{
+.signup{
   text-align: center;
   margin-top: 15px;
 }
@@ -51,7 +50,7 @@
   border: white;
   padding: 10px;
 }
-.btn_register{
+.btn_signup{
   font-size: 20px;
   border-radius: 6px;
   color: white;

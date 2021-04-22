@@ -43,7 +43,7 @@ export default function Register({ token }) {
             <div>
                 <input type="text"
                     name="name"
-                    placeholder="Please Enter your name"
+                    placeholder="Enter your name"
                     onChange={(e) => setName(e.target.value)}
                 />
             </div>
@@ -54,7 +54,7 @@ export default function Register({ token }) {
             <div>
                 <input type="text"
                     name="Surnname"
-                    placeholder="Please Enter your surnname"
+                    placeholder="Enter your surnname"
                     onChange={(e) => setSurnname(e.target.value)}
                 />
             </div>
@@ -65,7 +65,7 @@ export default function Register({ token }) {
             <div>
                 <input type="text"
                     name="username"
-                    placeholder="Username"
+                    placeholder="Enter your Username"
                     onChange={(e) => setUsername(e.target.value)}
                 />
             </div>
@@ -76,8 +76,9 @@ export default function Register({ token }) {
             <div>
                 <input type="text"
                     name="mobile_number"
-                    placeholder="Please Enter your mobile number"
-                    onChange={(e) => setMobile_number(e.target.value)} />
+                    placeholder="Enter your mobile number"
+                    onChange={(e) => setMobile_number(e.target.value)} 
+                    />
             </div>
 
             <div>
@@ -86,8 +87,9 @@ export default function Register({ token }) {
             <div>
                 <input type="email"
                     name="email"
-                    placeholder="Please Enter your email"
-                    onChange={(e) => setEmail(e.target.value)} />
+                    placeholder="Enter your email"
+                    onChange={(e) => setEmail(e.target.value)} 
+                    />
             </div>
 
             <div>
@@ -96,8 +98,10 @@ export default function Register({ token }) {
             <div>
                 <input type="password"
                     name="password"
-                    placeholder="Please Enter password"
-                    onChange={(e) => setPassword(e.target.value)} />
+                    placeholder="Enter your password"
+                    onChange={(e) => setPassword(e.target.value)} 
+                    />
+                    
             </div>
 
         </div>
@@ -110,13 +114,13 @@ export default function Register({ token }) {
                 <title>Register Page</title>
             </Head>
             <div className={styles.container}>
-                <div className={styles.registerpage}>
-                    <h1 className={styles.registertext}>Register</h1>
+                <div className={styles.signup_page}>
+                    <h1 className={styles.signup_text}>Register</h1>
                     <div className={styles.content}>
                         {registerForm()}
                     </div>
-                    <div className={styles.register}>
-                        <button className={styles.btn_register} onClick={register}>Register</button>
+                    <div className={styles.signup}>
+                        <button className={styles.btn_signup} onClick={register}>Sign up</button>
                     </div>
                 </div>
             </div>

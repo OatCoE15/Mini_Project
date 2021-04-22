@@ -4,21 +4,20 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 82, 51);
   }
-  .registerpage{
+  .signup_page{
     border: 3px solid black;
     padding: 40px 50px;
     border-radius: 10px;
     background-color: white;
   }
-  .logintext{
+  .signup_text{
     text-align: center;
     color:rgb(0, 0, 0);
   }
   .gridContainer {
     display: grid;
-    grid-template-columns: 120px auto;
+    grid-template-columns: 170px auto;
     margin-bottom: 16px;
     border-radius: 5px;
     padding: 10px;
@@ -30,16 +29,17 @@
   }
   .gridContainer>div>input {
     width: 100%;
-    padding: 2px 8px;
+    height: 100%;
+    padding: 2px 10px;
     margin: 0px 0;
     box-sizing: border-box;
-    font-size: 14pt;
+    font-size: 16px;
   }
-  .register{
+  .signup{
     text-align: center;
     margin-top: 15px;
   }
-  .btn_register{
+  .btn_signup{
     font-size: 19px;
     border-radius: 6px;
     color: white;
@@ -47,6 +47,5 @@
     background-color:#42b72a;
     padding: 10px;
   }
-  .content {
-    min-width: 25vw;
-}
+  
+ 

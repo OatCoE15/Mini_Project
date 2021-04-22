@@ -4,25 +4,26 @@ import { useState } from "react";
 import styles from "../styles/login.module.css";
 import axios from "axios";
 import config from "../config/config";
+import Link from 'next/link'
 
 export default function Login({ token }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [status, setStatus] = useState("");
     const [remember, setRemember] = useState(false);
-    const login = async (req, res) => {
-        try {
-            let result = await axios.post(`${config.URL}/login`, { username, password, remember }, { withCredentials: true });
-            console.log("result: ", result);
-            console.log("result.data:  ", result.data);
-            console.log("token:  ", token);
-            setStatus(result.status + ": " + result.data.user.username);
-        }
-        catch (e) {
-            console.log("error: ", JSON.stringify(e.response));
-            setStatus(JSON.stringify(e.response).substring(0, 80) + "...");
-        }
-    };
+    // const login = async (req, res) => {
+    //     try {
+    //         let result = await axios.post(`${config.URL}/login`, { username, password, remember }, { withCredentials: true });
+    //         console.log("result: ", result);
+    //         console.log("result.data:  ", result.data);
+    //         console.log("token:  ", token);
+    //         setStatus(result.status + ": " + result.data.user.username);
+    //     }
+    //     catch (e) {
+    //         console.log("error: ", JSON.stringify(e.response));
+    //         setStatus(JSON.stringify(e.response).substring(0, 80) + "...");
+    //     }
+    // };
     const reMem = async () => {
         setRemember(!remember);
     };
@@ -60,10 +61,10 @@ export default function Login({ token }) {
                     <h1 className={styles.logintext}>Login</h1>
                     {loginForm()}
                     <div className={styles.login}>
-                        <button className={styles.btn_login} onClick={login}>Login</button>
+                        <button className={styles.btn_login} /*</div>onClick={login}*/>Login</button>
                     </div>
-                    <div className={styles.register}>
-                        <button className={styles.btn_register} onClick={login}>Register</button>
+                    <div className={styles.signup}>
+                       <Link href='/register'><a><button className={styles.btn_signup} /*onClick={login}*/ >Sign up</button></a></Link>
                     </div>
                 </div>
             </div>

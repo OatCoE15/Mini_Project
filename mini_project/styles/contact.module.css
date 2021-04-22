@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact_page{
+    border: 3px solid black;
+    padding: 15px 60px;
+    border-radius: 10px;
+    background-color: white;
+  }
+  .contact_text{
+    text-align: center;
+    color:rgb(0, 0, 0);
+  }
+  .contact_data_back{
+    grid-column: span 9 / span 9;
+    font-size: 18pt;
+    text-align: left;
+  }
+  .contact_data_font{
+    grid-column: span 3 / span 3;
+    text-align: left;
+  }
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+  }
+  .image_contact{
+    text-align: center;
+    margin: 25px;
+  }
+  
+
+  
