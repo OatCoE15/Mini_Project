@@ -1,60 +1,34 @@
-.container{
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+.title {
+  margin-left: 1vw;
+  font-size: 3rem;
 }
-.loginpage{
-  border: 3px solid black;
-  padding: 40px 50px;
-  border-radius: 10px;
-  background-color: white;
+
+.input {
+  padding: 10px 20px 10px 20px;
+  border: none;
+  margin-bottom: 2vh;
+  border-bottom: 2px solid #a67a4b;
+  outline: none;
+  font-size: 1rem;
 }
-.logintext{
-  text-align: center;
-  color:rgb(0, 0, 0);
-}
-.gridContainer {
-  display: grid;
-  grid-template-columns: auto;
-  margin-bottom: 16px;
-  border-radius: 5px;
-  padding: 10px;
-}
-.gridContainer>div {
-  text-align: left;
-  padding: 10px 0;
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px 10px 20px;
+  outline: none;
+  border: none;
+  background-color: #a67a4b;
+  color: white;
   font-size: 1.2rem;
+  font-family: "Athiti", sans-serif;
 }
-.gridContainer>div>input {
-  width: 100%;
-  padding: 2px 8px;
-  margin: 0px 0;
-  box-sizing: border-box;
-  font-size: 14pt;
-}
-.login{
-  text-align: center;
-  margin-top: 10px;
-}
-.signup{
-  text-align: center;
-  margin-top: 15px;
-}
-.btn_login{
-  font-size: 20px;
-  border-radius: 6px;
-  background-color :#1877f2;
-  color: white;
-  border: white;
-  padding: 10px;
-}
-.btn_signup{
-  font-size: 20px;
-  border-radius: 6px;
-  color: white;
-  border: white;
-  background-color:#42b72a;
-  padding: 10px;
+
+.registerButton {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #a67a4b;
+  font-size: 1.2rem;
+  font-family: "Athiti", sans-serif;
+  cursor: pointer;
 }

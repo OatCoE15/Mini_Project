@@ -13,10 +13,23 @@ let users = {
   ],
 };
 
+let cart = {
+  cart: [
+    {
+      id: 1,
+      products: [
+        { productName: "shirt", quantity: "2", price: "250" },
+        { productName: "pants", quantity: "2", price: "250" },
+      ],
+    },
+  ],
+};
+
 const SECRET = "your_jwt_secret";
 const NOT_FOUND = -1;
 
 exports.users = users;
+exports.cart = cart;
 exports.SECRET = SECRET;
 exports.NOT_FOUND = NOT_FOUND;
 

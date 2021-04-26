@@ -9,6 +9,7 @@ const bcrypt = require("bcrypt");
 
 const db = require("./database.js");
 let users = db.users;
+let cart = db.cart;
 
 require("./passport.js");
 
@@ -86,6 +87,14 @@ router.post("/register", async (req, res) => {
     res.status(200).json({ message: "Register success" });
   } catch {
     res.status(422).json({ message: "Cannot register" });
+  }
+});
+
+router.get("/cart", (req, res) => {
+  try {
+    res.status(200).json({ message: "Get cart success", data: cart });
+  } catch {
+    es.status(422).json({ message: "Cannot get cart" });
   }
 });
 

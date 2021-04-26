@@ -4,74 +4,79 @@ import { useState } from "react";
 import styles from "../styles/login.module.css";
 import axios from "axios";
 import config from "../config/config";
-import Link from 'next/link'
+import { useRouter } from "next/router";
 
 export default function Login({ token }) {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [status, setStatus] = useState("");
-    const [remember, setRemember] = useState(false);
-    // const login = async (req, res) => {
-    //     try {
-    //         let result = await axios.post(`${config.URL}/login`, { username, password, remember }, { withCredentials: true });
-    //         console.log("result: ", result);
-    //         console.log("result.data:  ", result.data);
-    //         console.log("token:  ", token);
-    //         setStatus(result.status + ": " + result.data.user.username);
-    //     }
-    //     catch (e) {
-    //         console.log("error: ", JSON.stringify(e.response));
-    //         setStatus(JSON.stringify(e.response).substring(0, 80) + "...");
-    //     }
-    // };
-    const reMem = async () => {
-        setRemember(!remember);
-    };
+  const router = useRouter();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    const loginForm = () => (
-        <div className={styles.gridContainer}>
-            <div><b>Username</b></div>
-            <div>
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-            </div>
-            <div><b>Password</b></div>
-            <div>
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-            </div>
+  console.log("token : ", token);
+
+  const isLogin = () => {
+    if (token == "") {
+      return (
+        <div>
+          <p className={styles.title}>เข้าสู่ระบบ</p>
+          <div
+            style={{ marginBottom: "10px", marginTop: "-30px" }}
+            className="rows"
+          >
+            <p>เป็นสมาชิกแล้วหรือยัง ?</p>
+            <button
+              onClick={() => {
+                router.push("/register");
+              }}
+              className={styles.registerButton}
+            >
+              สมัครสมาชิก
+            </button>
+          </div>
+          <div className="column">
+            <input
+              onChange={(e) => setUsername(e.target.value)}
+              className={styles.input}
+              placeholder="Username"
+            ></input>
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
+              placeholder="Password"
+            ></input>
+            <button onClick={() => login()} className={styles.button}>
+              เข้าสู่ระบบ
+            </button>
+          </div>
         </div>
-    );
-
-    return (
-        <Layout>
-            <Head>
-                <title>Login Page</title>
-            </Head>
-            <div className={styles.container}>
-                <div className={styles.loginpage}>
-                    <h1 className={styles.logintext}>Login</h1>
-                    {loginForm()}
-                    <div className={styles.login}>
-                        <button className={styles.btn_login} /*</div>onClick={login}*/>Login</button>
-                    </div>
-                    <div className={styles.signup}>
-                       <Link href='/register'><a><button className={styles.btn_signup} /*onClick={login}*/ >Sign up</button></a></Link>
-                    </div>
-                </div>
-            </div>
-        </Layout>
-    );
+      );
+    } else {
+      return (
+        <div className="rows">
+          <p className={styles.title}>เข้าสู่ระบบเรียบร้อยแล้ว</p>
+        </div>
+      );
+    }
+  };
+  const login = async () => {
+    let result = await axios
+      .post(
+        `${config.URL}/login`,
+        { username, password },
+        { withCredentials: true }
+      )
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem("userid", res.data.user.id);
+        window.location.replace("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  return <Layout>{isLogin()}</Layout>;
 }
 
 export function getServerSideProps({ req, res }) {
-    return { props: { token: req.cookies.token || "" } };
+  return { props: { token: req.cookies.token || "" } };
 }

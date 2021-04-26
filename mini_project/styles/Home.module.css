@@ -8,11 +8,9 @@
 }
 
 .main {
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -47,9 +45,10 @@
 }
 
 .title {
-  margin: 0;
+  margin-top: 10px;
+  margin-left: 20px;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .title,
@@ -111,7 +110,102 @@
 }
 
 .logo {
-  height: 1em;
+  margin-left: 20px;
+  height: 5em;
+}
+
+.boxmenu {
+  margin-top: 3vh;
+  margin-right: 3vw;
+}
+
+.mainmenu {
+  font-family: "Athiti", sans-serif;
+  border: none;
+  width: 9vw;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+.mainmenu:hover {
+  color: #a67a4b;
+}
+
+.homepage {
+  padding: 20px;
+  height: 72vh;
+  background-image: url("../public/image/studio.jpg");
+  background-size: cover;
+  width: 90vw;
+}
+
+.indexTitle {
+  margin-left: 5vw;
+  margin-top: 10vh;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 6px;
+  color: white;
+}
+
+.subtitle {
+  margin-left: 5vw;
+  margin-top: -9vh;
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 6px;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.indexButton {
+  margin-left: 5vw;
+  margin-top: 2vh;
+  padding: 0px 20px 0px 20px;
+  font-size: 2rem;
+  font-weight: 200;
+  letter-spacing: 6px;
+  border: none;
+  background-color: black;
+  font-family: "Athiti", sans-serif;
+  color: white;
+  cursor: pointer;
+  /* animation: expandbutton;
+  animation-duration: 2s; */
+}
+
+.indexButton:hover {
+  padding: 0px 20px 0px 20px;
+  animation: expandbutton;
+  animation-duration: 3s;
+}
+
+.curencytitle {
+  font-size: 2rem;
+}
+
+.flag {
+  margin-left: 2vw;
+  margin-right: 10px;
+  height: 4vh;
+  width: 3vw;
+  box-shadow: 1px 1px 3px #303030;
+}
+
+.exchage{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@keyframes expandbutton {
+  0% {
+    padding: 0px 20px 0px 20px;
+  }
+  50% {
+    padding: 0px 40px 0px 40px;
+  }
 }
 
 @media (max-width: 600px) {
