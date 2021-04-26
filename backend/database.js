@@ -7,6 +7,8 @@ let users = {
       username: "oat",
       password: "$2b$10$BIZtQuDc9lVzppq272tOEeKMtez4SYZrfozCfK0ZkvKFra5OodV4e",
       email: "aot@gmail.com",
+      name: "admin",
+      telephone: "000",
     },
   ],
 };
