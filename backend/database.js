@@ -14,15 +14,7 @@ let users = {
 };
 
 let cart = {
-  cart: [
-    {
-      id: 1,
-      products: [
-        { productName: "shirt", quantity: "2", price: "250" },
-        { productName: "pants", quantity: "2", price: "250" },
-      ],
-    },
-  ],
+  cart: [],
 };
 
 const SECRET = "your_jwt_secret";
@@ -46,4 +38,8 @@ exports.isValidUser = async (username, password) => {
 // return -1 if user is not existing
 exports.checkExistingUser = (username) => {
   return users.users.findIndex((item) => item.username === username);
+};
+
+exports.checkExistingUidCart = (uid) => {
+  return cart.cart.findIndex((item) => item.userid === uid);
 };

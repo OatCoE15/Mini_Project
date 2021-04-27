@@ -8,22 +8,44 @@ import CheckRouter from "../components/checkrouter";
 
 const Shop = ({ token }) => {
   const router = useRouter();
-  const [username, setUsername] = useState("");
+  const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
+  useEffect(async () => {
+    setUserid(localStorage.getItem("userid"));
+    // console.log("userid", userid);
+  });
   const productList = [
     { id: "1", productName: "Smith&Wesson", price: "350" },
     { id: "2", productName: "Mafia Skull", price: "400" },
     { id: "3", productName: "Last Game", price: "400" },
     { id: "4", productName: "Harley Davidson", price: "500" },
     { id: "5", productName: "The Rolling Stovel", price: "400" },
-    { id: "6", productName: "Hawaii Shirt", price: "300" },
-    { id: "7", productName: "Hawaii Shirt", price: "300" },
-    { id: "8", productName: "Hawaii Shirt", price: "300" },
+    { id: "6", productName: "Hawaii Shirt 1", price: "300" },
+    { id: "7", productName: "Hawaii Shirt 2", price: "300" },
+    { id: "8", productName: "Hawaii Shirt 3", price: "300" },
     { id: "9", productName: "ONE PIECE Hawaii Shirt", price: "350" },
     { id: "10", productName: "HUF T-Shirt V.1", price: "350" },
     { id: "11", productName: "HUF T-Shirt V.2", price: "350" },
     { id: "12", productName: "HUF T-Shirt V.3", price: "400" },
   ];
+  const addtocart = async (item) => {
+    console.log(item);
+    let productName = item.productName;
+    let quantity = 1;
+    let price = item.price;
+    await axios
+      .post(
+        `${config.URL}/addtocart`,
+        { userid, productName, quantity, price },
+        { withCredentials: true }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <Layout>
       <div>
@@ -48,7 +70,10 @@ const Shop = ({ token }) => {
                   <div className={styles.productDetial}>
                     <p className={styles.productName}>{item.productName}</p>
                     <p className={styles.productName}>{item.price}฿</p>
-                    <button className={styles.addCartButton}>
+                    <button
+                      onClick={() => addtocart(item)}
+                      className={styles.addCartButton}
+                    >
                       เพิ่มลงในตะกร้า
                     </button>
                   </div>
@@ -62,8 +87,7 @@ const Shop = ({ token }) => {
   );
 };
 
-// export default CheckRouter(Shop);
-export default Shop;
+export default CheckRouter(Shop);
 
 export function getServerSideProps({ req, res }) {
   return { props: { token: req.cookies.token || "" } };

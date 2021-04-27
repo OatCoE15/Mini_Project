@@ -81,6 +81,41 @@
   animation: expandbutton;
   animation-duration: 1s;
 }
+.showButton {
+  margin-top: -30px;
+  margin-bottom: 30px;
+  border: none;
+  background-color: #000;
+  color: white;
+  padding: 0.3vw 2vw 0.3vw 2vw;
+  font-family: "Athiti", sans-serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.quantityButton {
+  margin-left: 0.5vw;
+  color: #a67a4b;
+  width: 1.2vw;
+  height: 1.2vw;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.deleteButton {
+  font-family: "Athiti", sans-serif;
+  margin-left: 0.5vw;
+  color: #a67a4b;
+  width: 2vw;
+  height: 1.2vw;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 @keyframes expandbutton {
   0% {

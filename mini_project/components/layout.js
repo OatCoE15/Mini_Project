@@ -38,7 +38,8 @@ const Layout = (props) => {
             axios
               .get(`${config.URL}/logout`, { withCredentials: true })
               .then((res) => {
-                console.log(res);
+                // console.log(res);
+                localStorage.removeItem("userid");
                 window.location.reload();
               })
               .catch((error) => {

@@ -12,7 +12,7 @@ export default function Home() {
       "http://data.fixer.io/api/latest?access_key=99bc8fc0517692665d3e71dcc8c12535&symbols=THB,CNY,JPY,USD&format=1"
     )
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       setUSD(res.data.rates.USD);
       setTHB(res.data.rates.THB);
       setJPY(res.data.rates.JPY);
