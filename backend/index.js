@@ -107,12 +107,14 @@ router.get("/deleteProduct", async (req, res) => {
     console.log("userid", req.headers.userid);
     console.log("productName", req.headers.productname);
     let inx = cart.cart.findIndex((item) => item.userid === req.headers.userid);
+    console.log("inx", inx);
     if (inx !== -1) {
       let idx = await cart.cart[inx].products.findIndex(
         (item) => item.productName == req.headers.productname
       );
       console.log("idx", idx);
-      delete cart.cart[inx].products[idx];
+      // delete cart.cart[inx].products[idx];
+      cart.cart[inx].products.splice(idx, 1);
     }
     console.log("inx", inx);
     res.status(200).json({ message: "Delete success" });
