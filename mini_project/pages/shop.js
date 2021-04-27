@@ -24,9 +24,17 @@ const Shop = ({ token }) => {
     { id: "7", productName: "Hawaii Shirt 2", price: "300" },
     { id: "8", productName: "Hawaii Shirt 3", price: "300" },
     { id: "9", productName: "ONE PIECE Hawaii Shirt", price: "350" },
-    { id: "10", productName: "HUF T-Shirt V.1", price: "350" },
-    { id: "11", productName: "HUF T-Shirt V.2", price: "350" },
-    { id: "12", productName: "HUF T-Shirt V.3", price: "400" },
+    { id: "10", productName: "Bonus Stage T-Shirt", price: "1,000" },
+    { id: "11", productName: "Chun-li & Cammy T-Shirt", price: "1,000" },
+    { id: "12", productName: "Doomsday Triple T-Shirt", price: "900" },
+    { id: "13", productName: "Ellis Long Sleeve T-Shirt", price: "1,400" },
+    { id: "14", productName: "Skidrokyo Pullover Hoodie", price: "1,800" },
+    { id: "15", productName: "Skidrokyo Tie-dye Hoodie", price: "2,100" },
+    { id: "16", productName: "Pushing Daisies Hoodie", price: "2,200" },
+    { id: "17", productName: "Dazy Easy Short", price: "2,000" },
+    { id: "18", productName: "Shake Fleece Short", price: "1,700" },
+    { id: "19", productName: "BPM Shot", price: "2,000" },
+    { id: "20", productName: "Peak Contrast Shot", price: "2,000" },
   ];
   const addtocart = async (item) => {
     console.log(item);
