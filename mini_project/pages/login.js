@@ -11,7 +11,7 @@ export default function Login({ token }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  // console.log("token : ", token);
+  //  console.log("token : ", token);
 
   const isLogin = () => {
     if (token == "") {

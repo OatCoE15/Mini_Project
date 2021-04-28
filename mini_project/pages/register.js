@@ -22,6 +22,7 @@ export default function Register({ token }) {
       )
       .then((res) => {
         console.log(res);
+        router.push("/login");
       })
       .catch((error) => {
         console.log(error);
@@ -50,7 +51,7 @@ export default function Register({ token }) {
           placeholder="Email"
         ></input>
         <input
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           className={styles.input}
           placeholder="Name"
         ></input>
@@ -59,7 +60,7 @@ export default function Register({ token }) {
           className={styles.input}
           placeholder="Telephone"
         ></input>
-        <button onClick={() => register()} className={styles.button}>
+        <button onClick={() => register() } className={styles.button}>
           สมัครสมาชิก
         </button>
       </div>
