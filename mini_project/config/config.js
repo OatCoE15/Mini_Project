@@ -1,5 +1,5 @@
 const LOCAL_URL = 'http://localhost/api';
-const PROD_URL = 'https://https://whispering-mountain-03558.herokuapp.com/api';
+const PROD_URL = 'https://whispering-mountain-03558.herokuapp.com/api';
 
 console.log('node env', process.env.NODE_ENV);
 
